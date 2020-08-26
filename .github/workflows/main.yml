@@ -17,18 +17,28 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
 
       # Runs a set of commands using the runners shell
-      - name: docker
+      - name: setup
         run: |
-          echo "---- docker setup ----"
+          echo "---- setup ----"
+          python -V
+          pip install -r requirements.txt
+          python -c "from cv2.xfeatures2d import SURF_create"
+          pip install flake8
 
       # Runs a set of commands using the runners shell
       - name: pytest
         run: |
           echo "---- pytest ----"
+          pytest src
 
       # Runs a set of commands using the runners shell
       - name: flake8
         run: |
           echo "---- flake8 ----"
+          flake8 main.py
+          flake8 src
