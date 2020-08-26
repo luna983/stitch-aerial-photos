@@ -1,0 +1,14 @@
+tqdm
+numpy
+matplotlib
+scipy
+pandas
+PyYAML
+rasterio
+shapely
+geopandas
+torch
+tensorboard
+pytest
+scikit-image
+https://gitlab.com/luna983/opencv_python_contrib_nonfree/-/raw/master/opencv_contrib_python_headless-4.4.0.40-cp37-cp37m-linux_x86_64.whl

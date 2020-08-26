@@ -1,0 +1,46 @@
+img_suffix: '.jpg'
+wld_suffix: '.jgw'
+
+in_dir_images: 'data/images'
+in_dir_csv: 'data/init.csv'
+out_dir_meta: 'data/world_files'
+
+stitch_crop:  # proportional to width/height
+    top: 0.03
+    bottom: 0.95
+    left: 0.03
+    right: 0.97
+
+viz_crop:  # proportional to width/height
+    top: 0.03
+    bottom: 0.95
+    left: 0.03
+    right: 0.91
+
+graph_max_dist: 100000
+
+output_iter: null
+gif_folder: 'cache/docs/'
+gif_file: 'output/demo.gif'
+
+crs: 'EPSG:3857'
+
+out_dir_cache: 'cache/data'
+
+# settings for stitching
+
+# preprocessing
+# pyramid scaling, will look at high-res inputs if low-res ones do not generate matches
+scales: [1]
+# feature detection, matching and transform estimation
+hessian_threshold: 400  # SURF, default: 100
+min_inliers: 100
+ransac_reproj_threshold: 3
+
+# settings for graph construction and global optim
+
+optim_n_iter: 10000
+optim_lr_theta: 0.0001
+optim_lr_scale: 0.0001
+optim_lr_xy: 0.5
+optim_lr_scheduler_milestones: null

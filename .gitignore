@@ -1,0 +1,10 @@
+logs
+tmp
+.pytest_cache/
+__pycache__/
+.ipynb_checkpoints/
+**/._*
+output/*.gif
+cache/**/*.jpg
+cache/**/*.tif
+data/init.csv
