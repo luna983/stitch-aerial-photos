@@ -1,5 +1,7 @@
 # Stitching Historical Aerial Photos
 
+![badge](https://github.com/luna983/stitch-aerial-photos/workflows/test/badge.svg)
+
 ## The Story
 
 In a centuries-old library at the University of Oxford, millions of aerial photographs taken in the final decades of the British Empire may help us prepare for a potential 21st century calamity: an exodus of people driven by climate change to places that are more livable — but politically inhospitable.
