@@ -1,6 +1,6 @@
 # Stitching Historical Aerial Photos
 
-![badge](https://github.com/luna983/stitch-aerial-photos/workflows/Build/badge.svg)
+![badge](https://github.com/luna983/stitch-aerial-photos/workflows/Build/badge.svg) [![DOI](https://zenodo.org/badge/290566410.svg)](https://zenodo.org/badge/latestdoi/290566410)
 
 ## The Story
 
