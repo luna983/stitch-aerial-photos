@@ -26,9 +26,10 @@ def build_graph(indices, method,
     Args:
         indices (list of list of tuples): each tuple corresponds to an image
             identifier, each element in the outer list corresponds to a swath
-        method (str): in ['within', 'across']
+        method (str): in ['within', 'across', 'all']
             within: make links only between neighbors in the swath
             across: make links only between nearest neighbors across swaths
+            all: make links across all pairs of images
         neighbor_within_swath (int): number of links made between an image
             and images on its own swath, cannot be None if method = 'within'
         positions (list of numpy.ndarray [N, 2]): each element in the list
@@ -77,13 +78,22 @@ def build_graph(indices, method,
                                       tree_i[tree_d < max_dist].flatten()]
                 if len(neighbors) > 0:
                     graph[(idx0, idx1)] += neighbors
+    elif method == 'all':
+        # unnest the list to be a list of image indices
+        all_indices = set([idx
+                           for swath_idx in indices
+                           for idx in swath_idx])
+        # iterate over every node/image
+        for idx in all_indices:
+            graph[idx] = list(all_indices - set([idx]))
     else:
         raise NotImplementedError
+
+    make_symmetric(graph)
 
     if verbose:
         print('Graph: ', graph)
 
-    make_symmetric(graph)
     return graph
 
 

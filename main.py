@@ -40,9 +40,8 @@ def run(cfg):
     # step 3: build links
     v.build_graph_links(
         f=s.stitch_pair,
-        method='across',
-        neighbor_across_swath=1,
-        max_dist=cfg['graph_max_dist'])
+        method='all',
+        verbose=True)
     print(v.links)
 
     # step 4: globally optimize
