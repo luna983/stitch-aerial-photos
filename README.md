@@ -41,7 +41,7 @@ docker pull luna983/stitch-aerial-photos:latest
 docker run -p 8888:8888 luna983/stitch-aerial-photos:latest
 ```
 
-go to `localhost:8888` in a web browser, and open up `demo.ipynb` to start exploring!
+go to `http://localhost:8888/?token=[REPLACE WITH TOKEN SHOWN]` in a web browser, and open up `demo.ipynb` to start exploring!
 
 ![demo](docs/demo.gif)
 
