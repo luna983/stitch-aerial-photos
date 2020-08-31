@@ -34,11 +34,15 @@ _Source of the demo image: [Historical England](https://historicengland.org.uk/m
 
 In this repo, we release a simplified version of our core code base. For legal reasons, we cannot share raw historical photos or sortie plots publicly; so we provide a "toy example" for demonstration. In practice, our code base can handle complex scenes with tens of thousands of images. Play with our interactive demo in `demo.ipynb`! You can change the initialization positions for all the images, but they will always find their way back to each other.
 
+To play with our demo, run
+
+```
+docker pull luna983/stitch-aerial-photos:latest
+docker run -p 8888:8888 luna983/stitch-aerial-photos:latest
+```
+
+go to `localhost:8888` in a web browser, and open up `demo.ipynb` to start exploring!
+
 ![demo](docs/demo.gif)
 
-## To Replicate
-
-Pull the docker image from `luna983/stitch-aerial-photos:latest`, open up `demo.ipynb`, and explore!
-
-Note that the SURF functions are not included in the free OpenCV distributions (so `pip install opencv-python` would not be sufficient); the docker image contains a version of 
-OpenCV compiled specifically for that environment.
+Note that the SURF functions are not included in the free OpenCV distributions (so `pip install opencv-python` would not be sufficient); the docker image contains a version of OpenCV compiled specifically for that environment.
