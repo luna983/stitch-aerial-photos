@@ -129,7 +129,7 @@ def optimize(nodes, links, width, height,
     for (i_idx, j_idx), trans in links.items():
         if trans is not None:
             rel_true_tensor.append(torch.cat(
-                [torch.tensor(trans.column_vectors).T,
+                [torch.tensor(trans.column_vectors, dtype=torch.float).T,
                  torch.tensor([[0., 0., 1.]])], dim=0))
             affines_i_idx.append(nodes.index(i_idx))
             affines_j_idx.append(nodes.index(j_idx))
